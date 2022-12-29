@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,700&display=swap");
+
+$main-color: #cf0000;
+$Alt-color: #fff;
+$Hv-Color: #650a0a;
+$f-s: 19px;
+
+/*start poster background*/
+
+.caption {
+  h1 {
+    font-family: "Roboto", sans-serif;
+    font-size: 3.3rem;
+    font-weight: 700;
+    padding: 5px 0px;
+  }
+  padding-top: 100px;
+  h3,
+  p {
+    padding: 10px 0px;
+  }
+
+  .btn {
+    padding: 5px;
+    width: 188px;
+    height: 54px;
+    background-color: #ffd400;
+    color: #000;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 23px;
+    font-weight: 600;
+    text-transform: uppercase;
+    position: relative;
+    border: none;
+    outline: none;
+    z-index: 3;
+    transition: all 0.4s ease-in;
+    &:hover {
+      color: $Alt-color;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: $main-color;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      border-radius: 5px;
+      z-index: -1;
+      color: #fff;
+      transition: all 0.4s ease-in-out;
+    }
+  }
+}
+
+.b-g {
+  text-align: center;
+
+  padding-top: 130px;
+  padding-left: 133px;
+}
+
+
+@media screen and (max-width:767px) {
+
+
+
+  .caption {
+    text-align: center;
+    h1 {
+      font-family: "Roboto", sans-serif;
+      font-size: 25px;
+    }
+    padding-top: 100px;
+    h3,
+    p {
+      padding: 10px 0px;
+    }
+
+}
+
+
+.b-g {
+
+  text-align: center;
+  padding-top: 64px;
+  padding-left: 27px;
+}
+
+}
+
+@media screen and (max-width:991px) {
+  .b-g {
+
+    text-align: center;
+    padding-top: 64px;
+    padding-left: 20px;
+  }
+
+}

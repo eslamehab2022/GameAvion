@@ -1,0 +1,168 @@
+<div class="container regs">
+  <div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+      <div class="poster">
+        <img
+          class="img-fluid"
+          src="assets/poster1.png"
+          alt="poster-background"
+        />
+      </div>
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+      <div class="register">
+        <h1 class="titel">GameAVion</h1>
+        <form
+          (ngSubmit)="submitForm(refisterForms)"
+          [formGroup]="refisterForms"
+        >
+          <label for="Name">Name</label>
+          <input
+            type="text"
+            name="Name"
+            id="Name"
+            class="form-control"
+            placeholder="Enter Name ..."
+            formControlName="names"
+          />
+
+          <div
+            *ngIf="
+              refisterForms.get('names')?.errors &&
+              refisterForms.get('names')?.touched
+            "
+            class="bg-warning mt-2 p-2 rounded"
+          >
+            <p
+              *ngIf="refisterForms.get('names')?.errors?.['required']"
+              class="mb-0"
+            >
+              This is wrong info validitors required ....
+            </p>
+            <p
+              *ngIf="refisterForms.get('names')?.errors?.['minlength']"
+              class="mb-0"
+            >
+              This is wrong info validitors minLength....
+            </p>
+            <p
+              *ngIf="refisterForms.get('names')?.errors?.['maxlength']"
+              class="mb-0"
+            >
+              This is wrong info validitors maxLength....
+            </p>
+          </div>
+
+          <!-------->
+
+          <label for="Email">Email</label>
+          <input
+            type="email"
+            name="Email"
+            id="Email"
+            class="form-control"
+            placeholder="Enter Email ..."
+            formControlName="emails"
+          />
+          <div
+            *ngIf="
+              refisterForms.get('emails')?.errors &&
+              refisterForms.get('emails')?.touched
+            "
+            class="bg-warning mt-2 p-2 rounded"
+          >
+            <p
+              *ngIf="refisterForms.get('emails')?.errors?.['required']"
+              class="mb-0"
+            >
+              This is wrong info validitors required ....
+            </p>
+            <p
+              *ngIf="refisterForms.get('emails')?.errors?.['email']"
+              class="mb-0"
+            >
+              This is wrong info validitors emails....
+            </p>
+          </div>
+          <!-------->
+
+          <label for="phone Number">phone Number</label>
+          <input
+            type="tel"
+            name="phone Number"
+            id="phone Number"
+            class="form-control"
+            placeholder="phone Number"
+            formControlName="phone"
+          />
+          <div
+            *ngIf="
+              refisterForms.get('phone')?.errors &&
+              refisterForms.get('phone')?.touched
+            "
+            class="bg-warning mt-2 p-2 rounded"
+          >
+            <p
+              *ngIf="refisterForms.get('phone')?.errors?.['required']"
+              class="mb-0"
+            >
+              This is wrong info validitors required ....
+            </p>
+            <p
+              *ngIf="refisterForms.get('phone')?.errors?.['pattern']"
+              class="mb-0"
+            >
+              This is wrong info validitors pattern phone....
+            </p>
+          </div>
+          <!-------->
+          <label for="password">password</label>
+          <input
+            class="form-control"
+            placeholder="password "
+            formControlName="password"
+            type="password"
+            name="password"
+            autocomplete="on"
+          />
+          <div
+            *ngIf="
+              refisterForms.get('password')?.errors &&
+              refisterForms.get('password')?.touched
+            "
+            class="bg-warning mt-2 p-2 rounded"
+          >
+            <p
+              *ngIf="refisterForms.get('password')?.errors?.['required']"
+              class="mb-0"
+            >
+              This is wrong info validitors required ....
+            </p>
+            <p
+              *ngIf="refisterForms.get('password')?.errors?.['pattern']"
+              class="mb-0"
+            >
+              This is wrong info validitors pattern password....
+            </p>
+          </div>
+          <!-------->
+          <label for="masseg">masseg</label>
+          <textarea
+            class="form-control"
+            id="masseg"
+            rows="5"
+            placeholder=" Enter masseg Here ..."
+            formControlName="area"
+          ></textarea>
+          <div class="Direct-login">
+            <p routerLink="/login">I already have an account</p>
+          </div>
+          <!-------->
+          <button [disabled]="refisterForms.invalid" class="btn">
+            Register
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

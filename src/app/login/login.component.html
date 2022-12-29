@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div class="poster-login ">
+        <img class="" src="assets/netflixgames.gif" alt="poster-background">
+            </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div class="logs">
+                <h1 class="titel">GameAVion</h1>
+
+                <form [formGroup]="login"  (ngSubmit)="goOnline(login)">
+                    <label for="Email">Email</label>
+                      <input type="email" name="Email" id="Email" class="form-control" placeholder="Enter Email ..." formControlName="email">
+                      <div
+                      *ngIf="
+                        login.get('email')?.errors &&
+                        login.get('email')?.touched
+                      "
+                      class="bg-warning mt-2 p-2 rounded"
+                    >
+                      <p
+                        *ngIf="login.get('email')?.errors?.['required']"
+                        class="mb-0"
+                      >
+                        This is wrong info validitors required ....
+                      </p>
+                      <p
+                        *ngIf="login.get('email')?.errors?.['email']"
+                        class="mb-0"
+                      >
+                        This is wrong info validitors emails....
+                      </p>
+                    </div>
+
+
+                          <!--------------------------->
+                    <label for="password">password</label>
+                     <input type="password" name="password" id="password" class="form-control" placeholder="password"  autocomplete="on" formControlName="paass">
+                     <div
+                     *ngIf="
+                       login.get('paass')?.errors &&
+                       login.get('paass')?.touched
+                     "
+                     class="bg-warning mt-2 p-2 rounded"
+                   >
+                     <p
+                       *ngIf="login.get('paass')?.errors?.['required']"
+                       class="mb-0"
+                     >
+                       This is wrong info validitors required ....
+                     </p>
+                     <p
+                       *ngIf="login.get('paass')?.errors?.['pattern']"
+                       class="mb-0"
+                     >
+                       This is wrong info validitors pattern password....
+                     </p>
+                   </div>
+
+
+                                                  <!--------------------------->
+
+
+      <div class="Direct-login ">
+        <p  routerLink="/Register">I dont have an account
+        </p>
+    </div>
+
+
+         <button class="btn " [disabled]="login.invalid" >login</button>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

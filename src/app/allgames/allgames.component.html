@@ -1,0 +1,22 @@
+<div class="container all-games ">
+  <div class="row " *ngIf="!loading">
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 all mx-2 " *ngFor=" let ac of action">
+          <div class="pic-gam  p-0">
+              <img  class="img-fluid " [src]="ac.thumbnail" alt="game picture ">
+          </div>
+          <div class="discrption mt-2">
+              <h6>{{ac.title}}</h6>
+              <p>{{ac.publisher}}</p>
+              <p>{{ac.genre}}</p>
+            <p class="text-warning">Today's downloads :
+              <span class="watch">{{ac.id}}</span></p>
+              <button class="btn btn-warning my-2  text-white">  {{ac.platform}} </button>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<div class=" container text-center err" *ngIf="loading">
+  <app-spinner></app-spinner>
+  </div>

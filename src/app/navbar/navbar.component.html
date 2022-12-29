@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-sm fixed-top">
+      <div class="container">
+        <a class="navbar-brand" routerLink="/welcome">GameAVion</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/onlinegames" routerLinkActive="actives">online Games</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/allgames" routerLinkActive="actives">Action</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/shooter" routerLinkActive="actives">shooter</a>
+                </li>
+                <li *ngIf=" !islogin" class="nav-item">
+                    <a class="nav-link" routerLink="/Register" routerLinkActive="actives">Register</a>
+                </li>
+                   <li  *ngIf=" !islogin"  class="nav-item">
+                    <a class="nav-link" routerLink="/login" routerLinkActive="actives" >Login</a>
+                </li>
+
+                <li  *ngIf=" islogin"  class="nav-item">
+                  <a class="nav-link" routerLink="/login"   (click)="logout()">LogOut</a>
+              </li>
+
+
+            </ul>
+        </div>
+  </div>
+</nav>

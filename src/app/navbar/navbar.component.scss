@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,700&display=swap");
+
+$main-color: #cf0000;
+$Alt-color: #fff;
+$f-s: 19px;
+
+//start Navbar
+
+.navbar {
+  background-color: $main-color;
+  .navbar-brand {
+    font-family: "Fredoka One", cursive;
+    font-size: 30px;
+    color: $Alt-color;
+  }
+
+  .navbar-toggler {
+    box-shadow: none;
+    outline: none;
+    border: none;
+
+    i {
+      color: $Alt-color;
+    }
+  }
+  .nav-item {
+    margin-right: 15px;
+
+    .nav-link {
+      padding: 0px 20px;
+      color: $Alt-color;
+      font-family: "Roboto", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1;
+      cursor: pointer;
+      font-weight: 600;
+      position: relative;
+      &::before {
+        position: absolute;
+        content: "";
+        background-color: #f7d115;
+        width: 0%;
+        height: 2px;
+        bottom: -6px;
+        left: 22px;
+        transition: all 0.4s ease-in-out;
+      }
+      &:hover::before {
+        width: calc(100% - 40px);
+      }
+    }
+  }
+
+  .actives {
+    color: #f7d115 !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .nav-item {
+    margin: 10px auto !important;
+  }
+}
+
+@media screen and (max-width: 992px) and (min-width: 600px) {
+  .nav-link {
+    padding: 0px 15px;
+  }
+  .nav-item {
+    margin-right: -15px !important;
+  }
+}
